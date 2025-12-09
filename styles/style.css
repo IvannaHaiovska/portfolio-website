@@ -1,0 +1,207 @@
+/* GLOBAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0e0e0f;
+    color: #f0f0f0;
+    line-height: 1.6;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 0 20px;
+    background: radial-gradient(circle at top, #1a1a1a, #0d0d0d);
+}
+
+/* Canvas for particles */
+#particles {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+/* HERO TEXT */
+.hero h1,
+.hero p,
+.hero-buttons button {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    position: relative;
+    z-index: 1;
+    animation: fadeInUpWave 0.8s forwards;
+}
+
+/* Staggered wave delays */
+.hero h1 {
+    animation-delay: 0.2s;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    animation-delay: 0.5s;
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    color: #cfcfcf;
+}
+
+.hero-buttons button:nth-child(1) {
+    animation-delay: 0.8s;
+}
+
+.hero-buttons button:nth-child(2) {
+    animation-delay: 1.0s;
+}
+
+/* Buttons container */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    z-index: 1;
+    position: relative;
+}
+
+/* Buttons styling */
+.hero-buttons button {
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+}
+
+/* Primary Button */
+.btn-primary {
+    background: #b066ff;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(176, 102, 255, 0.4);
+}
+
+.btn-primary:hover {
+    background: #8149bc;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 0 15px rgba(176, 102, 255, 0.6);
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #b066ff;
+    color: #b066ff;
+    font-weight: 600;
+    box-shadow: 0 0 8px rgba(176, 102, 255, 0.3);
+    padding: 14px 30px;
+    border-radius: 8px;
+}
+
+.btn-secondary:hover {
+    background: rgba(49, 29, 71, 0.4);
+    box-shadow: 0 0 15px rgba(176, 102, 255, 0.6);
+    transform: translateY(-2px) scale(1.02);
+}
+
+/* ANIMATION */
+@keyframes fadeInUpWave {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(-5px) scale(1.02);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* SKILLS SECTION */
+.skills-section {
+    padding: 90px 20px;
+    background: linear-gradient(180deg, rgba(13, 13, 13, 0.6), rgba(8, 8, 8, 0.6));
+    color: #f0f0f0;
+}
+
+.skills-section .container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 50px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* GRID */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+/* CARD */
+.skill-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    padding: 30px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    transition: transform .25s ease, box-shadow .25s ease;
+    position: relative;
+}
+
+/* Card Hover */
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* ICON */
+.skill-icon {
+    margin-bottom: 15px;
+}
+
+.skill-title {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #eae6ff;
+}
+
+.skill-list {
+    list-style: none;
+    padding-left: 0;
+    color: #d6d3f5;
+    line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
