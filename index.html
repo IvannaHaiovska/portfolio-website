@@ -20,6 +20,13 @@
         </div>
     </header>
     <main>
+        <!-- About Me Section -->
+         <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                
+            </div>
+         </section>
         <!-- Skill Section -->
         <section id="skills" class="skills-section">
             <div class="container">
@@ -154,7 +161,43 @@
                 </div>
             </div>
         </section>
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Contact Me</h2>
+
+                <div class="form-status" id="form-status"></div>
+
+                <form class="contact-form" action="https://formspree.io/f/your_form_id" method="POST" novalidate>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Your Message" rows="6" required></textarea>
+                        <span class="error-message"></span>
+                    </div>
+                    <button type="submit" class="btn-contact">Send Message</button>
+                </form>
+            </div>
+        </section>
     </main>
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Ivanna Haiovska. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/ivanna-haiovska/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/IvannaHaiovska" target=" _blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
     <script src="./scripts/main.js"></script>
     <script src="./scripts/particles.js"> </script>
 </body>
