@@ -15,18 +15,47 @@
         <h1>Hi, I'm Ivanna. <br> Web Developer</h1>
         <p>Creating engaging, interactive web experiences</p>
         <div class="hero-buttons">
-            <button class="btn-primary">View Projects</button>
+            <button class="btn-primary" onclick="window.location.href='#projects'">View Projects</button>
             <button class="btn-secondary">Download Resume</button>
         </div>
     </header>
     <main>
-        <!-- About Me Section -->
-         <section id="about" class="about-section">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container about-wrapper">
+
+                <div class="about-left">
+                    <img src="./images/about.jpg" alt="Ivanna" class="about-img">
+                </div>
+
+                <div class="about-right">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="about-text">
+                        I'm an aspiring Full-Stack Developer with a strong interest in building clean, responsive, and
+                        user-focused web applications.
+                        I’m continuously improving my skills in HTML, CSS, JavaScript, and React on the frontend, and
+                        learning Java and SQL on the backend.
+                    </p>
+                    <p class="about-text">
+                        I completed the Frontend Development program at SoftServe, where I practiced real tasks and
+                        strengthened my understanding of components, UI structure, and interactive functionality.
+                        I’m currently studying Full-Stack Development at Red River College, where I'm gaining a deeper
+                        understanding of backend logic, databases, and application architecture.
+                    </p>
+                    <p class="about-text">
+                        I enjoy learning, solving problems, and working on projects that help me grow as a developer.
+                        My approach is focused on writing clean code, understanding how things work under the hood, and
+                        building user-friendly interfaces.
+                    </p>
+                    <p class="about-text">
+                        My goal is to gain practical industry experience, contribute to real projects, and continue
+                        building my skills as a future full-stack engineer.
+                    </p>
+                </div>
+
             </div>
-         </section>
+        </section>
+
         <!-- Skill Section -->
         <section id="skills" class="skills-section">
             <div class="container">
@@ -140,12 +169,21 @@
 
                 <!-- Project 3: To-Do / CRUD App -->
                 <div class="project-card">
-                    <img src="./images/todo-app-placeholder.png" alt="To-Do App Screenshot">
+                    <img src="./images/todo-app-screenshot.png" alt="To-Do App Screenshot">
                     <h3>To-Do App</h3>
-                    <p>A simple CRUD application to manage tasks with create, read, update, delete operations.</p>
+                    <p>Task management app with task creation, editing, completion tracking,
+                        filters and smooth UI animations. Data is persisted using LocalStorage.</p>
+                        <p class="project-tech">
+                            JavaScript • HTML • CSS • LocalStorage
+                        </p>
                     <div class="project-buttons">
-                        <a href="#" class="btn-primary">View Project</a>
-                        <a href="#" class="btn-secondary">View Code</a>
+                        <a href="https://marvelous-caramel-00ef85.netlify.app/" class="btn-primary" target="_blank">
+                            Live Demo
+                        </a>
+
+                        <a href="https://github.com/IvannaHaiovska/todo-app" class="btn-secondary" target="_blank">
+                            GitHub
+                        </a>
                     </div>
                 </div>
 
