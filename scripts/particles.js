@@ -3,8 +3,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const ctx = canvas.getContext("2d");
 
     function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
     }
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
