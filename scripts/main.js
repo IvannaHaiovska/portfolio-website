@@ -1,6 +1,11 @@
 const form = document.querySelector('.contact-form');
 const formStatus = document.getElementById('form-status');
 
+const sections = document.querySelectorAll("section, header");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+const revealElements = document.querySelectorAll('.reveal');
+
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -78,3 +83,42 @@ function checkFormPosition() {
 
 window.addEventListener('scroll', checkFormPosition);
 checkFormPosition();
+
+function revealOnScroll() {
+    revealElements.forEach((el, index) => {
+        if (el.classList.contains('active')) return;
+
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 100) {
+            setTimeout(() => {
+                el.classList.add('active');
+            }, index * 150);
+        }
+    });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+
+revealOnScroll();
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+
+        if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+
+        if (link.getAttribute("href").includes(current)) {
+            link.classList.add("active");
+        }
+    });
+});

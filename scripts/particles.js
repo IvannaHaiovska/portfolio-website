@@ -31,7 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
             this.x += this.speedX;
             this.y += this.speedY;
             // attract to mouse
-            if (mouse.x && Math.abs(this.x - mouse.x) < 150 && Math.abs(this.y - mouse.y) < 150) {
+            if (mouse.x !== null && Math.abs(this.x - mouse.x) < 150 && Math.abs(this.y - mouse.y) < 150) {
                 this.x -= (this.x - mouse.x) / 25;
                 this.y -= (this.y - mouse.y) / 25;
             }
@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     let particlesArray = [];
-    const particlesCount = 150;
+    const particlesCount = window.innerWidth < 768 ? 60 : 120;
 
     function init() {
         particlesArray = [];
