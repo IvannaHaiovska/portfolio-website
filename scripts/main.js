@@ -2,9 +2,24 @@ const form = document.querySelector('.contact-form');
 const formStatus = document.getElementById('form-status');
 
 const sections = document.querySelectorAll("section, header");
-const navLinks = document.querySelectorAll(".nav-links a");
+const navLinksItems = document.querySelectorAll(".nav-links a");
 
 const revealElements = document.querySelectorAll('.reveal');
+
+const burger = document.querySelector('.burger');
+const navMenu = document.querySelector('.nav-links');
+
+// toggle burger
+burger.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+});
+
+// close menu on link click
+navLinksItems.forEach(link => {
+    link.addEventListener("click", () => {
+        navMenu.classList.remove("show");
+    });
+});
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -114,7 +129,7 @@ window.addEventListener("scroll", () => {
         }
     });
 
-    navLinks.forEach(link => {
+    navLinksItems.forEach(link => {
         link.classList.remove("active");
 
         if (link.getAttribute("href").includes(current)) {

@@ -17,6 +17,15 @@ body {
 }
 
 /* NAVBAR */
+.burger {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: #b066ff;
+    cursor: pointer;
+}
+
 .navbar {
     position: fixed;
     top: 0;
@@ -92,7 +101,7 @@ body {
 
 section,
 header {
-    scroll-margin-top: 50px;
+    scroll-margin-top: 90px;
 }
 
 /* HERO SECTION */
@@ -224,12 +233,16 @@ header {
 
 .about-left {
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .about-img {
     width: 100%;
-    border-radius: 20px;
+    max-width: 260px;
     object-fit: cover;
+    border-radius: 20px;
     box-shadow: 0 0 25px rgba(176, 102, 255, 0.3);
 }
 
@@ -282,12 +295,6 @@ header {
     position: relative;
 }
 
-/* Card Hover */
-.skill-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 28px rgba(0, 0, 0, 0.35);
-}
-
 /* ICON */
 .skill-icon {
     margin-bottom: 15px;
@@ -338,9 +345,16 @@ header {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.skill-card,
+.project-card {
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover,
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 28px rgba(0, 0, 0, 0.35);
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    border-color: rgba(176, 102, 255, 0.4);
 }
 
 .project-card img {
@@ -616,7 +630,19 @@ textarea:focus-visible {
         padding: 16px 20px;
     }
 
+    .burger {
+        display: block;
+    }
+
     .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        flex-direction: column;
+        background: rgba(10, 10, 10, 0.95);
+        padding: 20px;
+        border-radius: 12px;
+        display: none;
         gap: 15px;
     }
 
@@ -624,6 +650,23 @@ textarea:focus-visible {
         font-size: 0.9rem;
     }
    
+    .nav-links.show {
+        display: flex;
+    }
+
+    .hero {
+         min-height: 80svh;
+         padding: 90px 16px 50px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+    
     .hero-buttons {
         flex-direction: column;
         width: 100%;
@@ -632,6 +675,31 @@ textarea:focus-visible {
 
     .hero-buttons a {
         width: 100%;
+    }
+
+    section {
+        padding: 50px 16px;
+    }
+
+    .skill-card,
+    .project-card {
+        padding: 18px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    .about-wrapper {
+        gap: 25px;
+    }
+    .about-left {
+        order: 2;
+    }
+
+    .about-right {
+        order: 1;
     }
 
 }
