@@ -1,5 +1,10 @@
+window.onload = () => {
+    emailjs.init("HKcjaj3Lx74znEjM9");
+};
+
 const form = document.querySelector('.contact-form');
 const formStatus = document.getElementById('form-status');
+const submitBtn = document.getElementById('submitBtn');
 
 const sections = document.querySelectorAll("section, header");
 const navLinksItems = document.querySelectorAll(".nav-links a");
@@ -21,71 +26,87 @@ navLinksItems.forEach(link => {
     });
 });
 
-form.addEventListener('submit', async (e) => {
+
+function showError(input, message) {
+    input.nextElementSibling.textContent = message;
+}
+
+function clearErrors() {
+    document.querySelectorAll(".error-message").forEach(e => e.textContent = "");
+}
+
+function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function setLoading(state) {
+    submitBtn.disabled = state;
+    submitBtn.textContent = state ? "Sending..." : "Send Message";
+}
+
+form.addEventListener("submit", async (e) => {
     e.preventDefault();
-
-    document.querySelectorAll('.error-message').forEach(span => span.textContent = '');
-    formStatus.style.display = 'none';
-    formStatus.classList.remove('success', 'error');
-
-    let hasError = false;
+    clearErrors();
 
     const name = form.name.value.trim();
     const email = form.email.value.trim();
     const message = form.message.value.trim();
 
-    if (!name) {
-        form.name.nextElementSibling.textContent = 'Please enter your name';
-        hasError = true;
-    }
-    if (!email) {
-        form.email.nextElementSibling.textContent = 'Please enter your email';
-        hasError = true;
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        form.email.nextElementSibling.textContent = 'Email is not valid';
-        hasError = true;
-    }
-    if (!message) {
-        form.message.nextElementSibling.textContent = 'Please enter a message';
-        hasError = true;
+    let valid = true;
+
+    if (name.length < 2) {
+        showError(form.name, "Name must be at least 2 characters");
+        valid = false;
     }
 
-    if (hasError) return;
+    if (!validateEmail(email)) {
+        showError(form.email, "Invalid email");
+        valid = false;
+    }
+
+    if (message.length < 10) {
+        showError(form.message, "Message must be at least 10 characters");
+        valid = false;
+    }
+
+    if (!valid) return;
+
+    setLoading(true);
 
     try {
-        const response = await fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: {
-                'Accept': 'application/json'
+        await emailjs.send(
+            "service_aulyqco",
+            "template_y2a4jd3", {
+                name,
+                email,
+                message
             }
-        });
+        );
 
-        if (response.ok) {
-            showStatus('Message sent successfully!', 'success');
-            form.reset();
-        } else {
-            showStatus('Oops! Something went wrong.', 'error');
-        }
-    } catch (err) {
-        showStatus('Error sending message.', 'error');
-        console.error(err);
+       showStatus("Message sent successfully!", "success");
+       form.reset();
+
+    } catch (error) {
+        console.error(error);
+        showStatus("Failed to send message", "error");
     }
+
+    setLoading(false);
 });
 
 function showStatus(message, type) {
     formStatus.textContent = message;
-    formStatus.classList.add(type);
-    formStatus.style.display = 'block';
-    formStatus.style.opacity = '1';
+    formStatus.className = `form-status ${type}`;
+    formStatus.style.display = "block";
 
     setTimeout(() => {
-        formStatus.style.opacity = '0';
+        formStatus.style.opacity = "0";
+
         setTimeout(() => {
-            formStatus.style.display = 'none';
-            formStatus.classList.remove(type);
-        }, 500);
-    }, 5000);
+            formStatus.style.display = "none";
+            formStatus.style.opacity = "1";
+        }, 300);
+    }, 3000);
 }
 
 function checkFormPosition() {

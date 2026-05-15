@@ -439,6 +439,7 @@ header {
     font-weight: 600;
     display: none;
     animation: fadeInUp 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .form-status.success {
