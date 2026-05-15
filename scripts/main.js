@@ -1,6 +1,6 @@
-window.onload = () => {
+window.addEventListener("load", () => {
     emailjs.init("HKcjaj3Lx74znEjM9");
-};
+});
 
 const form = document.querySelector('.contact-form');
 const formStatus = document.getElementById('form-status');
@@ -16,7 +16,8 @@ const navMenu = document.querySelector('.nav-links');
 
 // toggle burger
 burger.addEventListener("click", () => {
-    navMenu.classList.toggle("show");
+    const isOpen = navMenu.classList.toggle("show");
+    burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
 });
 
 // close menu on link click

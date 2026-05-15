@@ -16,7 +16,7 @@
         <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
             ☰
         </button>
-        <ul class="nav-links">
+        <ul class="nav-links" id="nav-menu">
             <li><a href="#about" aria-label="Go to About section">About</a></li>
             <li><a href="#skills" aria-label="Go to Skills section">Skills</a></li>
             <li><a href="#projects" aria-label="Go to Projects section">Projects</a></li>
@@ -29,11 +29,12 @@
         <h1>Hi, I'm Ivanna. <br> Aspiring Full-Stack Web Developer</h1>
         <p>Building responsive and user-focused web applications</p>
         <p class="hero-stack">
-            HTML • CSS • JavaScript • React
+            HTML • CSS • JavaScript • React • PHP
         </p>
         <div class="hero-buttons">
             <a class="btn-primary" href="#projects" aria-label="View portfolio projects">View Projects</a>
-            <a href="./resume.pdf" download class="btn-secondary" aria-label="Download resume PDF">Download Resume</a>
+            <a href="./resume.pdf" download="Ivanna-Haiovska-Resume.pdf" class="btn-secondary"
+                aria-label="Download resume PDF">Download Resume</a>
         </div>
     </header>
     <main>
@@ -55,8 +56,8 @@
                     </p>
 
                     <p class="about-text">
-                        I work with HTML, CSS, JavaScript, React, Java, and SQL, and I’m currently expanding my
-                        knowledge through hands-on projects and academic studies at Red River College Polytechnic.
+                        I work with HTML, CSS, JavaScript, React, PHP, and SQL, and I’m currently expanding my knowledge
+                        through hands-on projects and academic studies at Red River College Polytechnic.
                     </p>
                 </div>
 
@@ -101,9 +102,9 @@
 
                         <h3 class="skill-title">Backend Fundamentals</h3>
                         <ul class="skill-list">
-                            <li>Java — OOP fundamentals</li>
+                            <li>PHP — backend fundamentals</li>
                             <li>SQL & relational database basics</li>
-                            <li>Understanding backend fundamentals</li>
+                            <li>MySQL and PDO</li>
                         </ul>
                     </div>
 
@@ -154,115 +155,120 @@
 
             <!-- Project 1: To-Do / CRUD App -->
                 <div class="project-card reveal">
-                    <img src="./images/todo-app-screenshot.png" alt="To-Do App Screenshot" loading="lazy">
-                    <h3>To-Do App</h3>
-                    <p>
-                        Responsive Todo List application built with HTML, CSS, and Vanilla JavaScript.
-                        Features include task creation, editing, filtering, localStorage persistence, and responsive UI.
-                    </p>
+                    <div class="project-media">
+                        <img src="./images/todo-app-screenshot.png" alt="To-Do App Screenshot" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>To-Do App</h3>
+                        <p>
+                            Responsive Todo List application built with HTML, CSS, and Vanilla JavaScript.
+                            Features include task creation, editing, filtering, localStorage persistence, and responsive UI.
+                        </p>
 
-                    <p>
-                        The project focuses on dynamic DOM manipulation, accessibility, and clean user experience across
-                        desktop and mobile devices.
-                    </p>
+                        <p>
+                            The project focuses on dynamic DOM manipulation, accessibility, and clean user experience across
+                            desktop and mobile devices.
+                        </p>
 
-                    <p class="project-tech">
-                        HTML • CSS • JavaScript • DOM Manipulation • localStorage • Responsive Design • Accessibility
-                    </p>
-                    <div class="project-buttons">
-                        <a href="https://marvelous-caramel-00ef85.netlify.app/" class="btn-primary" target="_blank"
+                        <p class="project-tech">
+                            HTML • CSS • JavaScript • DOM Manipulation • localStorage • Responsive Design • Accessibility
+                        </p>
+                        <div class="project-buttons">
+                            <a href="https://marvelous-caramel-00ef85.netlify.app/" class="btn-primary" target="_blank"
                             rel="noopener noreferrer" 
                             aria-label="Open To-Do App live demo">
                             Live Demo
-                        </a>
+                            </a>
 
-                        <a href="https://github.com/IvannaHaiovska/todo-app" class="btn-secondary" target="_blank"
-                            rel="noopener noreferrer" aria-label="Open To-Do App GitHub repository">
-                            GitHub
-                        </a>
+                            <a href="https://github.com/IvannaHaiovska/todo-app" class="btn-secondary" target="_blank"
+                                rel="noopener noreferrer" aria-label="Open To-Do App GitHub repository">GitHub
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Project 2: Portfolio Website -->
-                <div class="project-card reveal">
-                    <img src="./images/portfolio-placeholder.png" alt="Portfolio Screenshot" loading="lazy">
-                    <h3>Portfolio Website</h3>
-
-                    <p>
-                        Personal portfolio website built to showcase my projects, skills, and development experience.
-                        Features responsive layout, smooth animations, interactive UI elements, and a particles
-                        background.
-                    </p>
-
-                    <p>
-                        The project focuses on modern UI design, accessibility, and clean frontend structure.
-                    </p>
-
-                    <p class="project-tech">
-                        HTML • CSS • JavaScript • Responsive Design • Animations • Canvas API
-                    </p>
-
-                    <div class="project-buttons">
-                        <a href="https://ivanna-dev-portfolio.netlify.app/" class="btn-primary" target="_blank"
-                            rel="noopener noreferrer" aria-label="Open Portfolio Website live demo">Live
-                            Demo</a>
-                        <a href="https://github.com/IvannaHaiovska/portfolio-website.git" class="btn-secondary"
-                            target="_blank" rel="noopener noreferrer" aria-label="Open Portfolio Website GitHub
-                            repository">GitHub</a>
-                    </div>
-                </div>
+               
                 
-                <!-- Project 3: Typing Speed Test-->
+                <!-- Project 2: Typing Speed Test-->
                 <div class="project-card reveal">
-                    <img src="./images/typing-speed-test-screenshot.png" alt="Typing Speed Test Screenshot"
-                        loading="lazy">
-                      <h3>Typing Speed Test</h3>
+                    <div class="project-media">
+                        <img src="./images/typing-speed-test-screenshot.png" alt="Typing Speed Test Screenshot" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>Typing Speed Test</h3>
 
-                      <p>
-                          Interactive typing speed test application that measures WPM, accuracy, and typing errors in
-                          real time.
-                          Includes multiple game modes, dynamic feedback, and responsive UI interactions.
-                      </p>
+                        <p>
+                            Interactive typing speed test application that measures WPM, accuracy, and typing errors in real time.
+                            Includes multiple game modes, dynamic feedback, and responsive UI interactions.
+                        </p>
 
-                      <p class="project-tech">
-                          JavaScript • DOM Manipulation • CSS Animations • State Management • Event Handling
-                      </p>
+                        <p class="project-tech">
+                            JavaScript • DOM Manipulation • CSS Animations • State Management • Event Handling
+                        </p>
 
-                      <div class="project-buttons">
-                          <a href="https://typing-speed-testapp.netlify.app/" class="btn-primary" target="_blank"
+                        <div class="project-buttons">
+                            <a href="https://typing-speed-testapp.netlify.app/" class="btn-primary" target="_blank"
                               rel="noopener noreferrer" aria-label="Open Typing Speed Test App live demo">
                               Live Demo
-                          </a>
+                            </a>
 
-                          <a href="https://github.com/IvannaHaiovska/typing-speed-test.git" class="btn-secondary"
-                              target="_blank" rel="noopener noreferrer" aria-label="Open Typing Speed Test App GitHub
-                              repository">
-                              GitHub
-                          </a>
+                            <a href="https://github.com/IvannaHaiovska/typing-speed-test.git" class="btn-secondary" target="_blank" rel="noopener noreferrer" aria-label="Open Typing Speed Test App GitHub
+                              repository">GitHub</a>
+                            </div>
                       </div>
                 </div>
 
-                <!-- Project 4: Weather App -->
+                <!-- Project 3: Weather App -->
                 <div class="project-card reveal">
-                    <img src="./images/weather-app-screenshot.png" alt="Weather App Screenshot" loading="lazy">
-                    <h3>Weather App</h3>
-                    <p>
-                        React-based weather application that allows users to search weather by city or use their current
-                        location.
-                        Features API integration, dynamic backgrounds, loading states, and error handling.
-                    </p>
-                    <p class="project-tech">
-                        React • JavaScript • Axios • OpenWeather API • Geolocation API • CSS
-                    </p>
-                    <div class="project-buttons">
-                        <a href="https://weather-app-react-2026.netlify.app/" class="btn-primary" target="_blank"
+                    <div class="project-media">
+                        <img src="./images/weather-app-screenshot.png" alt="Weather App Screenshot" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>Weather App</h3>
+                        <p>
+                            React-based weather application that allows users to search weather by city or use their current location.
+                            Features API integration, dynamic backgrounds, loading states, and error handling.
+                        </p>
+                        <p class="project-tech">
+                            React • JavaScript • Axios • OpenWeather API • Geolocation API • CSS
+                        </p>
+                        <div class="project-buttons">
+                            <a href="https://weather-app-react-2026.netlify.app/" class="btn-primary" target="_blank"
                             rel="noopener noreferrer" aria-label="Open Weather App live demo">Live Demo</a>
-                        <a href="https://github.com/IvannaHaiovska/weather-app.git" class="btn-secondary"
-                            target="_blank" rel="noopener noreferrer" aria-label="Open Weather App GitHub
-                            repository">GitHub</a>
+                            <a href="https://github.com/IvannaHaiovska/weather-app.git" class="btn-secondary"
+                            target="_blank" rel="noopener noreferrer" aria-label="Open Weather App GitHub repository">GitHub</a>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Project 4: Photography CMS (Full-Stack PHP Project) -->
+                <div class="project-card reveal">
+                    <div class="project-media">
+                        <img src="./images/photography-cms-screenshot.png" alt="Photography CMS Screenshot" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3>Photography CMS (Full-Stack PHP Project)</h3>
+
+                        <p>
+                            Full-stack Content Management System built for managing a photography portfolio. The system
+                            allows admin users to create, edit, and delete photos and categories, manage content, and handle
+                            user interactions through a secure admin panel.
+                        </p>
+
+                        <p>
+                            The project includes a PHP backend with MySQL database integration and a React-based gallery component built with Vite.
+                        </p>
+
+                        <p class="project-tech">
+                            PHP • MySQL • PDO • Bootstrap 4 • JavaScript • React • Vite • TinyMCE
+                        </p>
+
+                        <div class="project-buttons">
+                            <a href="https://photography.byethost16.com/" class="btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Open Photography CMS live demo">Live Demo</a>
+                            <a href="https://github.com/IvannaHaiovska/photography-cms.git" class="btn-secondary" target="_blank" rel="noopener noreferrer" aria-label="Open Photography CMS GitHub repository">GitHub</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <!-- Contact Section -->
@@ -272,7 +278,7 @@
 
                 <div class="form-status" id="form-status" aria-live="polite"></div>
 
-                <form class="contact-form" action="https://formspree.io/f/your_form_id" method="POST" novalidate>
+                <form class="contact-form" method="POST" novalidate>
 
                     <div class="form-group">
                         <label for="name">Name</label>
